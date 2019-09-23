@@ -3,6 +3,7 @@ def Homework_3():
 
 Homework_3()
 
+
 import random
 
 ans1 = "It is certain"
@@ -26,6 +27,27 @@ ans18 = "My sources say no"
 ans19 = "Outlook not so good"
 ans20 = "Very doubtful"
 
+def check_input(response):
+    correct_response = False
+    while correct_response == False:
+        # print(response)
+        if response == "quit":
+            exit()
+        if '?' not in response:
+            print('Every questions ends with a question mark!')
+            response = input(name + ", what is your question for the Magic 8 Ball?")
+        else:
+            correct_response = True
+            return response
+
+name = input("Enter your name:")
+
+# add loop
+while True:
+    response = input(name + ", what is your question for the Magic 8 Ball?")
+    if response == "quit":
+        break
+    response = check_input(response)
 choice = random.randint(1,20)
 
 if choice == 1:
@@ -71,3 +93,4 @@ else:
 
 print("*************************")
 print("Magic 8 Ball:",answer)
+exit()
